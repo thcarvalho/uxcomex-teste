@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UXComex</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"></script>
+    <script src="../scripts/products.js"></script>
+  </head>
+  <body>
+    <body>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">Inicio</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./clients.html">Clientes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="./products.html">Produtos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./orders.html">Pedidos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="container mt-5">
+        <h1>Produtos</h1>
+        <h1>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
+            <i class="bi bi-plus"></i> Novo Produto
+          </button>
+        </h1>
+        <form class="input-group d-flex row" role="search">
+          <div class="col-sm">
+            <select class="form-select" id="filterSelect">
+              <option selected>Filtro</option>
+              <option value="0">Nome</option>
+            </select>
+          </div>
+          <div class="col-sm-9">
+            <input class="form-control" id="searchInput" type="search" placeholder="Pesquisar" aria-label="Search"/>
+          </div>
+          <div class="col-sm">
+            <button class="btn btn-outline-primary" id="searchButton" type="submit">Pesquisar</button>
+          </div>
+        </form>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Nome</th>
+              <th scope="col">Descrição</th>
+              <th scope="col">Preço</th>
+              <th scope="col">Quantidade em Estoque</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <nav id="paginationNav">
+        </nav>
+      </div>
+
+      <!-- Add Product Modal -->
+      <div
+        class="modal fade"
+        id="addProductModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Adicionar Novo Produto
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form>
+              <div class="m-3">
+                <label for="nameInput" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nameInput"/>
+              </div>
+              <div class="m-3">
+                <label for="descriptionInput" class="form-label">Descrição</label>
+                <textarea type="text" class="form-control" id="descriptionInput" placeholder="Descrição do produto aqui..."></textarea>
+              </div>
+              <div class="m-3">
+                <label for="priceInput" class="form-label">Preço</label>
+                <input type="number" step="0.01"  class="form-control" id="priceInput" placeholder="0.00" />
+              </div>
+              <div class="m-3">
+                <label for="quantityInput" class="form-label">Quantidade em Estoque</label>
+                <input type="number" class="form-control" id="quantityInStockInput" />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Fechar
+                </button>
+                <button type="submit" id="addProductButton" class="btn btn-primary">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Product Modal -->
+      <div
+        class="modal fade"
+        id="editProductModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Editar Produto
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <form>
+              <div>
+                <input hidden type="text" class="form-control" id="productIdEditInput"/>
+              </div>
+              <div class="m-3">
+                <label for="nameInput" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="nameEditInput"/>
+              </div>
+              <div class="m-3">
+                <label for="descriptionInput" class="form-label">Descrição</label>
+                <textarea type="text" class="form-control" id="descriptionEditInput" placeholder="Descrição do produto aqui..."></textarea>
+              </div>
+              <div class="m-3">
+                <label for="priceInput" class="form-label">Preço</label>
+                <input type="number" step="0.01" class="form-control" id="priceEditInput" placeholder="0.00" />
+              </div>
+              <div class="m-3">
+                <label for="quantityInput" class="form-label">Quantidade em Estoque</label>
+                <input type="number" class="form-control" id="quantityInStockEditInput" />
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Fechar
+                </button>
+                <button type="submit" id="editProductButton" class="btn btn-primary">Salvar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Product Modal -->
+      <div
+        class="modal fade"
+        id="deleteProductModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Deletar Produto?
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">Tem certeza de que deseja deletar o produto?</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Não
+              </button>
+              <button type="button" id="deleteProductButton" class="btn btn-primary">
+                Sim
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

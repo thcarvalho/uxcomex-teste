@@ -1,0 +1,92 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - API", "1 - API", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{8584BA36-0DF2-4287-A679-20A97A802FD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{C23CE867-DC39-4C77-BAFA-4657FD493A5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UXComex.API", "src\UXComex.API\UXComex.API.csproj", "{29EBAF33-E710-4F84-B5AA-C821C00EF4AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 - Web", "5 - Web", "{BEFC8B87-6EF6-4C35-B7C7-60144259CA15}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Tests", "6 - Tests", "{6EEF151A-FBDA-4879-8B9A-844BFB3A4CA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UXComex.Domain", "src\UXComex.Domain\UXComex.Domain.csproj", "{394DE9D5-7F92-4B74-BD6B-530333E81A21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UXComex.Infra", "src\UXComex.Infra\UXComex.Infra.csproj", "{8485E0DB-D3E3-493F-AE75-EC6741E97C73}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{305DFC1C-B4AC-49DA-98EC-8C6016A1064B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UXComex.Application", "src\UXComex.Application\UXComex.Application.csproj", "{171217E0-3AC8-4FE2-901E-5DEE0D117FE6}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UXComex.Web", "src\UXComex.Web\", "{D2E14387-1EB4-5001-90CF-EEAC8341C339}"
+	ProjectSection(WebsiteProperties) = preProject
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57902"
+		Debug.AspNetCompiler.PhysicalPath = "src\UXComex.Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57902\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57902"
+		Release.AspNetCompiler.PhysicalPath = "src\UXComex.Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57902\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57902"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UXComex.Tests", "tests\UXComex.Tests\UXComex.Tests.csproj", "{DE325FD0-A830-4DB5-91E5-1AFF52E028B3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29EBAF33-E710-4F84-B5AA-C821C00EF4AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29EBAF33-E710-4F84-B5AA-C821C00EF4AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29EBAF33-E710-4F84-B5AA-C821C00EF4AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29EBAF33-E710-4F84-B5AA-C821C00EF4AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{394DE9D5-7F92-4B74-BD6B-530333E81A21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{394DE9D5-7F92-4B74-BD6B-530333E81A21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{394DE9D5-7F92-4B74-BD6B-530333E81A21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{394DE9D5-7F92-4B74-BD6B-530333E81A21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8485E0DB-D3E3-493F-AE75-EC6741E97C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8485E0DB-D3E3-493F-AE75-EC6741E97C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8485E0DB-D3E3-493F-AE75-EC6741E97C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8485E0DB-D3E3-493F-AE75-EC6741E97C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{171217E0-3AC8-4FE2-901E-5DEE0D117FE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{171217E0-3AC8-4FE2-901E-5DEE0D117FE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{171217E0-3AC8-4FE2-901E-5DEE0D117FE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{171217E0-3AC8-4FE2-901E-5DEE0D117FE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2E14387-1EB4-5001-90CF-EEAC8341C339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E14387-1EB4-5001-90CF-EEAC8341C339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2E14387-1EB4-5001-90CF-EEAC8341C339}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2E14387-1EB4-5001-90CF-EEAC8341C339}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{DE325FD0-A830-4DB5-91E5-1AFF52E028B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE325FD0-A830-4DB5-91E5-1AFF52E028B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE325FD0-A830-4DB5-91E5-1AFF52E028B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE325FD0-A830-4DB5-91E5-1AFF52E028B3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{29EBAF33-E710-4F84-B5AA-C821C00EF4AB} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{394DE9D5-7F92-4B74-BD6B-530333E81A21} = {8584BA36-0DF2-4287-A679-20A97A802FD4}
+		{8485E0DB-D3E3-493F-AE75-EC6741E97C73} = {C23CE867-DC39-4C77-BAFA-4657FD493A5F}
+		{171217E0-3AC8-4FE2-901E-5DEE0D117FE6} = {305DFC1C-B4AC-49DA-98EC-8C6016A1064B}
+		{D2E14387-1EB4-5001-90CF-EEAC8341C339} = {BEFC8B87-6EF6-4C35-B7C7-60144259CA15}
+		{DE325FD0-A830-4DB5-91E5-1AFF52E028B3} = {6EEF151A-FBDA-4879-8B9A-844BFB3A4CA2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41B42553-65D1-4434-A7A4-BB73E4FBEB2C}
+	EndGlobalSection
+EndGlobal
